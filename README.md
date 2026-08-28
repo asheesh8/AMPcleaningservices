@@ -44,14 +44,18 @@ see `docs/client-questions.md` for the list and the reasoning.
 
 ## Deployment (Vercel)
 
-`vercel.json` at the repository root configures everything — leave the
-Vercel project's Root Directory blank and import the repo as-is:
+**Set the project's Root Directory to `site`.** That is what Vercel's
+importer auto-detects, and the repo is laid out to match it: the app,
+`vercel.json` and the `api/` functions all live under `site/`.
 
-- Install `npm --prefix site install`, build `npm --prefix site run build`
-- Output `site/dist`
-- SPA rewrite excludes `/api` and every static prefix, so a missing
-  endpoint returns a real 404 rather than HTML with a 200
-- Security and cache headers are set in `vercel.json`
+Everything else is Vercel's stock Vite preset — `npm install`,
+`npm run build`, output `dist`. No custom commands.
+
+`site/vercel.json` adds:
+
+- An SPA rewrite that excludes `/api` and every static prefix, so a
+  missing endpoint returns a real 404 instead of HTML with a 200
+- Security headers and immutable caching for hashed assets
 
 ### Forms need one env var before they deliver
 
