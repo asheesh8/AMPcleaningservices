@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'wouter'
 import { Wordmark } from './Wordmark'
+import { ThemeToggle } from './ThemeToggle'
 import { navLinks, primaryPhone } from '../data/site'
 
 export function SiteHeader() {
@@ -32,6 +33,7 @@ export function SiteHeader() {
       </nav>
 
       <div className="site-header__actions">
+        <ThemeToggle />
         <a className="site-header__phone" href={primaryPhone.phoneHref}>{primaryPhone.phone}</a>
         <Link className="btn btn--solid btn--sm" href="/estimate">Get a price</Link>
       </div>

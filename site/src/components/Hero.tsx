@@ -1,5 +1,6 @@
 import { Link } from 'wouter'
 import { Photo } from './Photo'
+import { Sprig } from './Sprig'
 import { business, primaryPhone, ratings } from '../data/site'
 
 /**
@@ -10,6 +11,8 @@ import { business, primaryPhone, ratings } from '../data/site'
 export function Hero() {
   return (
     <section className="hero">
+      <Sprig name="eucalyptus" className="sprig--hero-a" drift={19} />
+
       <div className="hero__text">
         <p className="eyebrow">{business.city}, Rhode Island · {business.yearsInBusiness} years</p>
 

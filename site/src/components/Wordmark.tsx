@@ -1,17 +1,24 @@
-/** The laurel ring from AMP's mark, redrawn flat so it reads at small sizes. */
+/**
+ * AMP's real mark. It is drawn gold-on-charcoal, so on the light ground it
+ * sits in its own dark badge rather than being cut out — gold lettering on
+ * cream would be unreadable, and redrawing it would be inventing a logo they
+ * did not ask for.
+ */
 export function Wordmark() {
   return (
     <span className="wordmark">
-      <svg className="wordmark__mark" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="17.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <path
-          d="M13.4 27.6c-.5-4.9 1.6-9 5.9-11.7-.4 4.9-2.4 8.8-5.9 11.7Z"
-          fill="currentColor"
-        />
-        <path d="M11.6 24.8c1.7-.5 3.2-1.4 4.5-2.7" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-      </svg>
+      <img
+        className="wordmark__mark"
+        src="/brand/amp-mark-96.webp"
+        srcSet="/brand/amp-mark-96.webp 96w, /brand/amp-mark-192.webp 192w"
+        sizes="44px"
+        width={96}
+        height={96}
+        alt=""
+        decoding="async"
+      />
       <span className="wordmark__type">
-        <span className="wordmark__name">AMP Cleaning</span>
+        <span className="wordmark__name">AMP Cleaning Services</span>
         <span className="wordmark__sub">Attention to Detail</span>
       </span>
     </span>

@@ -33,26 +33,105 @@
 }
 
 :root {
-  --paper:      #f7f4ee;   /* warm, not clinical white */
+  /* ---- light (default) ---------------------------------- */
+  --paper:      #f7f4ee;
   --paper-warm: #efe9de;
   --paper-deep: #e5ddcd;
 
-  --ink:        #191713;   /* warm near-black, 15.9:1 on paper */
-  --ink-soft:   #4a453c;   /* 8.0:1 — safe for body copy */
-  --ink-faint:  #5a544b;   /* 5.5:1 on the deepest ground the site uses */
+  --ink:        #191713;
+  --ink-soft:   #4a453c;
+  --ink-faint:  #5a544b;
 
-  --gold:       #755610;   /* the logo gold, darkened until it clears 4.5:1 on every light ground */
-  --gold-bright:#c9a227;   /* the logo gold — dark grounds only */
+  --gold:       #755610;
   --gold-pale:  #f0e4c4;
 
   --rule:       rgba(25, 23, 19, 0.14);
   --rule-soft:  rgba(25, 23, 19, 0.08);
+
+  /* The inverted block — manifesto and footer. In light mode it is the
+     charcoal AMP's gold mark was drawn for; in dark mode it lifts off the
+     page ground instead, so the rhythm survives the theme flip. */
+  --inv-bg:     #191713;
+  --inv-fg:     #f7f4ee;
+  --inv-muted:  #a49c8c;
+  --inv-gold:   #c9a227;
+
+  --field-line: #8d8578;
+  --field-ph:   #6f685c;
+
+  --sprig-opacity: 0.5;
+  --sprig-filter:  none;
 
   --pad:        clamp(1.25rem, 5vw, 5.5rem);
   --header-h:   4.75rem;
 
   --display: 'Bricolage Grotesque Variable', 'Helvetica Neue', Arial, sans-serif;
   --sans:    'Instrument Sans Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  color-scheme: light;
+}
+
+/* ---- dark ------------------------------------------------
+   Warm near-blacks, not blue-blacks, so the gold mark still looks
+   like it belongs to the same company. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper:      #14120f;
+    --paper-warm: #1c1a16;
+    --paper-deep: #23201b;
+
+    --ink:        #f4f0e8;
+    --ink-soft:   #c7bfb1;
+    --ink-faint:  #a89f90;
+
+    --gold:       #d9ae32;
+    --gold-pale:  #2e2718;
+
+    --rule:       rgba(244, 240, 232, 0.18);
+    --rule-soft:  rgba(244, 240, 232, 0.10);
+
+    --inv-bg:     #262119;
+    --inv-fg:     #f7f4ee;
+    --inv-muted:  #b3a996;
+    --inv-gold:   #e0b93f;
+
+    --field-line: #6f685c;
+    --field-ph:   #9a9285;
+
+    --sprig-opacity: 0.42;
+    --sprig-filter:  saturate(0.85) brightness(1.06);
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper:      #14120f;
+  --paper-warm: #1c1a16;
+  --paper-deep: #23201b;
+
+  --ink:        #f4f0e8;
+  --ink-soft:   #c7bfb1;
+  --ink-faint:  #a89f90;
+
+  --gold:       #d9ae32;
+  --gold-pale:  #2e2718;
+
+  --rule:       rgba(244, 240, 232, 0.18);
+  --rule-soft:  rgba(244, 240, 232, 0.10);
+
+  --inv-bg:     #262119;
+  --inv-fg:     #f7f4ee;
+  --inv-muted:  #b3a996;
+  --inv-gold:   #e0b93f;
+
+  --field-line: #6f685c;
+  --field-ph:   #9a9285;
+
+  --sprig-opacity: 0.42;
+  --sprig-filter:  saturate(0.85) brightness(1.06);
+
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -243,28 +322,28 @@ h1, h2, h3, h4, p, figure, blockquote, ul, ol { margin-top: 0; }
 
 .manifesto {
   padding: clamp(3.5rem, 7vw, 6.5rem) var(--pad);
-  color: var(--paper);
-  background: var(--ink);
+  color: var(--inv-fg);
+  background: var(--inv-bg);
 }
 .manifesto blockquote {
   margin: 0 0 1.25rem;
   max-width: 18ch;
-  color: var(--paper);
+  color: var(--inv-fg);
 }
 .manifesto__tail {
   max-width: 32ch;
   margin: 0 0 1.75rem;
   font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
-  color: var(--gold-bright);
+  color: var(--inv-gold);
 }
-.manifesto__attr { color: #a49c8c; margin: 0; }
+.manifesto__attr { color: var(--inv-muted); margin: 0; }
 
 /* ============================================================
    Services
    ============================================================ */
 
-.svc__title { margin: 0 0 clamp(1.75rem, 3vw, 2.75rem); }
-.svc { margin: 0; padding: 0; list-style: none; }
+.svc__title { margin: 0 0 clamp(1.75rem, 3vw, 2.75rem); max-width: 18ch; }
+.svc { margin: 0; padding: 0; list-style: none; max-width: 56rem; }
 .svc__item {
   display: grid;
   gap: 0.5rem 2rem;
@@ -288,7 +367,7 @@ h1, h2, h3, h4, p, figure, blockquote, ul, ol { margin-top: 0; }
    ============================================================ */
 
 .detail { background: var(--paper-warm); }
-.detail__title { margin: 0 0 1rem; max-width: 20ch; }
+.detail__title { margin: 0 0 1rem; max-width: 17ch; }
 .detail .lede { margin-bottom: clamp(2rem, 3.5vw, 3rem); }
 
 .detail__grid {
@@ -333,6 +412,8 @@ h1, h2, h3, h4, p, figure, blockquote, ul, ol { margin-top: 0; }
 /* ============================================================
    Rooms
    ============================================================ */
+
+.section > .reveal > h2.display { max-width: 20ch; }
 
 .rooms {
   display: grid;
@@ -433,13 +514,19 @@ h1, h2, h3, h4, p, figure, blockquote, ul, ol { margin-top: 0; }
    ============================================================ */
 
 .wordmark { display: inline-flex; align-items: center; gap: 0.6rem; }
-.wordmark__mark { width: 1.85rem; height: 1.85rem; color: var(--gold); flex: none; }
+.wordmark__mark {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--ink);
+}
 .wordmark__type { display: flex; flex-direction: column; line-height: 1.05; }
 .wordmark__name {
   font-family: var(--display);
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.028em;
 }
 .wordmark__sub {
   font-size: 0.6875rem;
@@ -529,8 +616,8 @@ h1, h2, h3, h4, p, figure, blockquote, ul, ol { margin-top: 0; }
 
 .foot {
   padding: clamp(3rem, 6vw, 5rem) var(--pad) 2rem;
-  color: var(--paper);
-  background: var(--ink);
+  color: var(--inv-fg);
+  background: var(--inv-bg);
 }
 .foot__grid {
   display: grid;
@@ -538,28 +625,28 @@ h1, h2, h3, h4, p, figure, blockquote, ul, ol { margin-top: 0; }
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   padding-bottom: 2.5rem;
 }
-.foot__mark { margin: 0 0 0.5rem; color: var(--paper); max-width: 12ch; }
-.foot__tag { color: #a49c8c; margin: 0; }
+.foot__logo { width: 8.25rem; height: 8.25rem; margin-bottom: 1rem; border-radius: 50%; }
+.foot__tag { color: var(--inv-muted); margin: 0; }
 .foot__h {
   margin: 0 0 0.9rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold-bright);
+  color: var(--inv-gold);
 }
 .foot ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.55rem; }
-.foot li { font-size: 0.9375rem; color: #cfc7b8; }
-.foot a:hover { color: var(--paper); text-decoration: underline; }
+.foot li { font-size: 0.9375rem; color: var(--inv-muted); }
+.foot a:hover { color: var(--inv-fg); text-decoration: underline; }
 .foot__base {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 2rem;
   justify-content: space-between;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(247, 244, 238, 0.14);
+  border-top: 1px solid rgba(247, 244, 238, 0.18);
 }
-.foot__base p { margin: 0; color: #a49c8c; }
+.foot__base p { margin: 0; color: var(--inv-muted); }
 
 /* ============================================================
    Pages and forms
@@ -632,7 +719,7 @@ fieldset { margin: 0; padding: 0; border: 0; }
   padding: 0.8rem 0.9rem;
   color: var(--ink);
   background: var(--paper);
-  border: 1.5px solid #8d8578;   /* 3.3:1 on paper — WCAG 1.4.11 */
+  border: 1.5px solid var(--field-line);
   border-radius: 3px;
   font-size: 1rem;
 }
@@ -642,7 +729,7 @@ fieldset { margin: 0; padding: 0; border: 0; }
   outline: 2px solid var(--gold);
   outline-offset: 1px;
 }
-.field input::placeholder, .field textarea::placeholder { color: #6f685c; } /* 4.6:1 */
+.field input::placeholder, .field textarea::placeholder { color: var(--field-ph); }
 .field-row { display: grid; gap: 0 1rem; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); }
 
 .form-note { margin: 0.4rem 0 0; }
@@ -663,3 +750,106 @@ fieldset { margin: 0; padding: 0; border: 0; }
 .submit-error .fine { color: #6d4a45; }
 .submit-error ul { margin: 0.75rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.35rem; font-size: 0.9375rem; }
 .submit-error a { font-weight: 600; color: #8f2c23; text-decoration: underline; }
+
+/* ============================================================
+   Theme toggle
+   ============================================================ */
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  color: var(--ink);
+  background: transparent;
+  border: 1.5px solid var(--rule);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+.theme-toggle:hover { border-color: var(--ink); background: var(--paper-warm); }
+.theme-toggle svg { width: 1.05rem; height: 1.05rem; }
+
+/* Photographs are a touch bright against a dark ground. */
+:root[data-theme='dark'] .hero__frame img,
+:root[data-theme='dark'] .tile img,
+:root[data-theme='dark'] .room img,
+:root[data-theme='dark'] .team__figure img { filter: brightness(0.9) saturate(0.94); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .hero__frame img,
+  :root:not([data-theme='light']) .tile img,
+  :root:not([data-theme='light']) .room img,
+  :root:not([data-theme='light']) .team__figure img { filter: brightness(0.9) saturate(0.94); }
+}
+
+/* ============================================================
+   Sprigs — catalogue plates in the margins
+
+   These fill the empty gutters a two-column editorial layout leaves
+   behind. They sit under the content, never take a click, and drift
+   slowly enough that you notice them only on the second look.
+   ============================================================ */
+
+.sprig {
+  position: absolute;
+  z-index: 0;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--sprig-opacity);
+  filter: var(--sprig-filter);
+  animation-name: posy;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes posy {
+  0%,
+  100% { translate: 0 0; rotate: 0deg; }
+  33%  { translate: 6px -12px; rotate: 1.6deg; }
+  66%  { translate: -5px -6px; rotate: -1.2deg; }
+}
+
+/* Sections that host sprigs need a stacking context and clipped bleed.
+   This must NOT be applied to every .section: a clipping ancestor becomes
+   the sticky scroll container and breaks the form pages' sticky intro. */
+.section { position: relative; }
+.hero, .manifesto, .rule-note, .sec--sprig { position: relative; overflow: hidden; }
+
+/* Content must sit above the illustration layer. */
+.hero__text, .hero__frame,
+.manifesto > *, .rule-note > *,
+.section > .reveal, .section > .svc,
+.section > .detail__grid, .section > .rooms,
+.section > .reviews__grid, .funnels > .reveal { position: relative; z-index: 1; }
+
+/* Placement. Deliberately asymmetric — a grid of sprigs would look like
+   a pattern rather than like marginalia. */
+.sprig--hero-a  { top: -2%; right: 56%; width: 104px; }
+.sprig--svc-a   { top: 14%;  right: 2%; width: 178px; }
+.sprig--svc-b   { bottom: 6%; right: 4%; width: 132px; }
+.sprig--detail  { top: 6%;   right: 4%; }
+.sprig--rule-a  { top: 12%;  right: 6%; }
+.sprig--rooms   { top: 2%;   right: 2%;  width: 138px; }
+.sprig--rev     { bottom: 5%; right: 3%; width: 150px; }
+.sprig--fun     { top: 50%;  right: 1.5%; translate: 0 -50%; }
+
+/* Below the editorial breakpoint the gutters disappear, so most sprigs
+   would sit on top of the copy. Keep only the ones with room. */
+@media (max-width: 60rem) {
+  .sprig { opacity: calc(var(--sprig-opacity) * 0.55); }
+  .sprig--svc-b, .sprig--rev, .sprig--fun { display: none; }
+}
+@media (max-width: 40rem) {
+  .sprig--svc-a, .sprig--rooms, .sprig--fun { display: none; }
+  .sprig--hero-a { width: 84px; }
+  .sprig--detail { width: 96px; }
+  .sprig--rule-a { width: 100px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprig { animation: none; }
+}

@@ -6,8 +6,18 @@ export function SiteFooter() {
     <footer className="foot">
       <div className="foot__grid">
         <div>
-          <p className="display display--md foot__mark">AMP Cleaning Services</p>
-          <p className="fine foot__tag">Attention to Detail · {business.city}, Rhode Island</p>
+          <img
+            className="foot__logo"
+            src="/brand/amp-mark-192.webp"
+            srcSet="/brand/amp-mark-192.webp 192w, /brand/amp-mark-384.webp 384w"
+            sizes="132px"
+            width={192}
+            height={192}
+            alt="The AMP Cleaning Services mark: a gold laurel ring."
+            loading="lazy"
+            decoding="async"
+          />
+          <p className="fine foot__tag">{business.city}, Rhode Island</p>
         </div>
 
         <div>

@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f4ee" />
+    <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)" />
     <title>AMP Cleaning Services — Warwick, RI</title>
     <meta
       name="description"
@@ -57,6 +58,12 @@
       // Set before first paint so revealed-on-scroll sections start hidden
       // only when JS is actually running to reveal them.
       document.documentElement.classList.add('js-reveal')
+      // Resolve the saved theme before first paint, otherwise a dark-mode
+      // visitor gets a flash of cream.
+      try {
+        var t = localStorage.getItem('amp-theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
     </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

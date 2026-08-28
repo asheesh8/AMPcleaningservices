@@ -81,12 +81,52 @@ is restricted to the dark blocks.
 
 Both self-hosted, Latin subset, weight axis only.
 
+## Themes
+
+Light and dark, both first-class. Light is the default because a
+cleaning company should look like an open room; dark exists because
+AMP's mark was drawn gold-on-charcoal and looks entirely at home there.
+
+The theme follows the system preference until a visitor picks one, at
+which point the choice is stored and resolved before first paint so
+nobody gets a flash of the wrong ground. The inverted blocks — the
+manifesto and the footer — flip to a *lighter* warm charcoal in dark
+mode so the page's rhythm survives the switch.
+
+Every text colour clears 4.5:1 on every ground in **both** themes,
+verified by computation.
+
+## The mark
+
+Use AMP's real logo. It is drawn gold on charcoal, so on light grounds
+it sits in its own dark circular badge rather than being cut out — gold
+lettering on cream is unreadable, and redrawing the laurel would be
+inventing a logo they never asked for.
+
+## Sprigs
+
+Cleaning supplies drawn as vintage catalogue plates — spray bottle,
+sponge, folded cloths, pail, brush, lemon, eucalyptus, gloves — cut to
+transparency so one asset serves both themes.
+
+They live in the margins, behind content, never interactive, and drift
+on staggered 15–23 second cycles so no two move together. They are
+marginalia, not decoration for its own sake: they exist because the
+editorial layout leaves real gutters, and an empty gutter reads as an
+unfinished page.
+
+Placement rule: a sprig may tuck up to about 10% behind a heading. Past
+that it stops being marginalia and starts being clutter. Below the
+two-column breakpoint the gutters vanish, so most sprigs are hidden
+rather than allowed to sit on the copy.
+
 ## Motion
 
-Almost none. A short fade-and-rise as sections enter, and nothing else.
-No parallax, no particles, no scroll-jacked hero, no shimmer. Content is
+Slow and sparse. A short fade-and-rise as sections enter, and the sprig
+drift. No parallax, no particles, no scroll-jacked hero. Content is
 visible by default and only hidden once JavaScript confirms it can
-reveal it again, so nothing depends on JS to be readable.
+reveal it again, so nothing depends on JS to be readable. Everything
+stops under `prefers-reduced-motion`.
 
 ## Photography
 

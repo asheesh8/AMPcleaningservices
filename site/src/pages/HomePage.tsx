@@ -2,6 +2,7 @@ import { Link } from 'wouter'
 import { Hero } from '../components/Hero'
 import { Reveal } from '../components/Reveal'
 import { Photo } from '../components/Photo'
+import { Sprig } from '../components/Sprig'
 import { PageMeta } from '../components/PageMeta'
 import {
   business, details, houseRule, manifesto, people, services, testimonials, work,
@@ -29,7 +30,9 @@ export function HomePage() {
       </section>
 
       {/* ---------------------------------------------- services */}
-      <section id="services" className="section">
+      <section id="services" className="section sec--sprig">
+        <Sprig name="brush" className="sprig--svc-a" width={200} drift={21} />
+        <Sprig name="cloths" className="sprig--svc-b" drift={17} delay={3} />
         <Reveal>
           <p className="eyebrow">What we do</p>
           <h2 className="display display--lg svc__title">Six kinds of clean.</h2>
@@ -50,7 +53,8 @@ export function HomePage() {
       </section>
 
       {/* ---------------------------------------------- the detail argument */}
-      <section id="detail" className="section detail">
+      <section id="detail" className="section detail sec--sprig">
+        <Sprig name="sponge" className="sprig--detail" width={165} drift={23} flip />
         <Reveal>
           <p className="eyebrow">Attention to detail</p>
           <h2 className="display display--lg detail__title">
@@ -83,6 +87,7 @@ Three years of photos, and this is what we kept taking pictures of.
 
       {/* ---------------------------------------------- house rule */}
       <section className="rule-note">
+        <Sprig name="pail" className="sprig--rule-a" width={165} drift={18} delay={1} />
         <Reveal>
           <p className="eyebrow">How we work</p>
           <p className="rule-note__quote">{houseRule.quote}</p>
@@ -91,7 +96,8 @@ Three years of photos, and this is what we kept taking pictures of.
       </section>
 
       {/* ---------------------------------------------- rooms */}
-      <section className="section">
+      <section className="section sec--sprig">
+        <Sprig name="lemon" className="sprig--rooms" drift={20} flip />
         <Reveal>
           <p className="eyebrow">Finished work</p>
           <h2 className="display display--lg">Ordinary Rhode Island homes.</h2>
@@ -116,7 +122,8 @@ Three years of photos, and this is what we kept taking pictures of.
       </section>
 
       {/* ---------------------------------------------- reviews */}
-      <section id="reviews" className="section reviews">
+      <section id="reviews" className="section reviews sec--sprig">
+        <Sprig name="gloves" className="sprig--rev" drift={22} delay={2} />
         <Reveal>
           <p className="eyebrow">What people said</p>
           <h2 className="display display--lg">Every word below is public.</h2>
@@ -170,7 +177,8 @@ Three years of photos, and this is what we kept taking pictures of.
       </section>
 
       {/* ---------------------------------------------- funnels */}
-      <section className="section funnels">
+      <section className="section funnels sec--sprig">
+        <Sprig name="spray" className="sprig--fun" width={132} drift={16} delay={1} />
         <Reveal>
           <div className="funnel funnel--primary">
             <h2 className="display display--md">Want a price?</h2>
