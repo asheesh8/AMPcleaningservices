@@ -1,124 +1,113 @@
 # AMP Cleaning Services — brand system
 
-Version 1.0 · August 2026
+Version 2.0 · August 2026
 
-## The idea
+## What changed from v1, and why
 
-AMP already owned the right idea and put it on their logo: **Attention to
-Detail**. The brand's job is to take that from a tagline to an argument.
+The first version of this site was dark, gold, and set in a thin
+high-contrast serif, with a generated cinematic hero and drifting dust
+motes. It looked expensive and it was wrong.
 
-The argument is simple and it is true of this company specifically:
+It was wrong because it dressed a warm, funny, blunt mother-and-daughter
+business in a luxury costume that belonged to a different company. The
+hero was an AI-generated countertop — a fake photograph on the site of a
+business whose entire argument is that they do real work carefully. Every
+line of copy defined the company against an unnamed inferior competitor,
+which is a rhetorical tic, not a voice.
 
-> Anyone can clean the middle of a room. We were hired for the edges.
+Version 2 starts from who they actually are.
 
-This is not a slogan invented for the site. It is what AMP's own photo
-archive is *about*. Three years of posts and the overwhelming majority of
-the photographs are burner grates, the seam behind a tap, the top edge of a
-fan blade, the underside of an oven door. They photograph the parts of a
-house nobody else photographs. Their customers then use the phrase back at
-them — "attention to detail" is one of the keyword clusters on their own
-Google reviews.
+## Who they are
 
-## Positioning
+Belinda and her daughter Amber. Warwick, Rhode Island. Three-plus years.
+5.0 from 19 Google reviews, 98% from 28 on Facebook.
 
-AMP is a two-person company: Belinda (owner) and her daughter Amber. The
-brand must not imply a crew, a franchise, or a fleet. Its premium quality
-comes from **the same two people every time**, not from scale.
+Their own words, unedited:
 
-AMP already prices and speaks as a premium operator. Their own post:
+> Expecting perfection while paying bargain rates is wild behavior.
 
-> Expecting perfection while paying bargain rates is wild behavior. You
-> can't ask for premium results while shopping in the discount aisle.
+> Cleaning is hard physical work, and when there's no airflow and the
+> temperature keeps rising, it can become exhausting very quickly. A
+> little cool air makes a huge difference for your cleaning girls.
 
-That is the tone: warm to clients, unapologetic about standards, and
-completely without corporate softening.
+> We will treat your home like it is ours!
+
+Warm, direct, funny, and completely unembarrassed about standards. That
+is the brand. Nothing needs inventing.
 
 ## Voice
 
-**Is:** direct, plain, specific, quietly confident. Short sentences.
-Concrete nouns — grate, seam, edge, basin. Willing to state a standard.
+**Is:** first person plural. Short sentences. Concrete nouns — grate,
+seam, edge, basin, deposit. Says the awkward thing plainly. Occasionally
+funny. Never apologises for charging properly.
 
-**Is not:** "sparkling", "spotless", "we go the extra mile", "your
-satisfaction is our priority", "elevate", "transform", "pristine oasis".
-Never sentimental about cleaning. Never uses "team" to mean two people.
+**Is not:** aphorisms. Anything that could be a LinkedIn caption. The
+construction "not X — Y". Defining the company against competitors.
+"Elevate", "transform", "seamless", "pristine", "spotless oasis".
 
-**Test:** could a competitor in another state paste this line onto their
-site unchanged? If yes, it is wrong.
+**Test:** would Belinda say this out loud to a client standing in their
+kitchen? If not, cut it.
 
 ## Colour
 
-Sampled from the existing gold-gradient logo ring.
+The ground is **light**. A cleaning company's website should feel like a
+room with the curtains open. Dark is used deliberately and sparingly —
+the manifesto block and the footer — which is also where their gold logo
+actually belongs.
 
 | Token | Value | Use |
 |---|---|---|
-| `--ink` | `#0a0a0b` | The ground. Nearly everything sits on this. |
-| `--ink-raise` | `#131316` | Alternating sections. |
-| `--ink-card` | `#17171b` | Cards, form panels. |
-| `--gold-deep` | `#8a6a1c` | Hairlines, evidence captions, gradient ends. |
-| `--gold` | `#c9a227` | Eyebrows, ticks, focus. |
-| `--gold-light` | `#ecd28b` | Emphasis, italic display, links. |
-| `--gold-pale` | `#f6e7b8` | Specular peak in gradients only. |
-| `--bone` | `#f2eee6` | Primary text. |
-| `--bone-dim` | `#cdc7bb` | Secondary text. |
-| `--muted` | `#8e887c` | Meta text only, never body copy. |
+| `--paper` | `#f7f4ee` | The ground. Warm, not clinical. |
+| `--paper-warm` | `#efe9de` | Alternating sections, cards. |
+| `--paper-deep` | `#e5ddcd` | The house-rule block. |
+| `--ink` | `#191713` | Warm near-black. All primary text. |
+| `--ink-soft` | `#4a453c` | Body copy. |
+| `--ink-faint` | `#5a544b` | Meta and captions only. |
+| `--gold` | `#755610` | Eyebrows, numerals, phone links on light. |
+| `--gold-bright` | `#c9a227` | The logo gold. **Dark grounds only.** |
+| `--gold-pale` | `#f0e4c4` | The primary funnel card. |
 
-**Restraint rule.** Gold is a hairline and an accent, never a fill. The only
-gold areas on the site are the primary button and the specular sweeps.
-If a screen has more than roughly 5% gold by area, it has gone gaudy.
+Every text colour clears **4.5:1 on every ground it is used on**, verified
+by computation, not eye. `--gold` is the logo gold darkened until it
+passed; `--gold-bright` is the true logo colour and fails on light, so it
+is restricted to the dark blocks.
 
 ## Type
 
-- **Display — Cormorant Garamond**, weight 300, tight leading (0.94), very
-  slightly negative tracking. Chosen because AMP's logotype is a classical
-  Roman capital; Cormorant is the closest well-made variable face that
-  harmonises with it rather than fighting it.
-- **Interface — Instrument Sans**, 400–500. Quiet, neutral, no personality
-  of its own. It exists so Cormorant can carry the personality.
-- **Eyebrow micro-caps** — 0.6875rem, `letter-spacing: 0.34em`, uppercase,
-  gold. This is lifted directly from `ATTENTION TO DETAIL` in the mark and
-  is the single most identifying typographic gesture on the site. Use it to
-  open sections; never for body copy.
+- **Bricolage Grotesque** for display, weight 600, tight tracking
+  (-0.032em). It has warmth and a slight irregularity that keeps it from
+  reading as corporate. It is emphatically not a luxury serif.
+- **Instrument Sans** for interface and body.
 
-Both faces are self-hosted, Latin subset only.
+Both self-hosted, Latin subset, weight axis only.
 
 ## Motion
 
-Motion is **light behaving normally in a still room**. Everything is slow.
-
-- **The hero ring.** The laurel circle from the mark draws itself as the
-  scroll beats play, completing behind the wordmark. This is the brand's
-  own asset animated, not a generic scroll effect.
-- **Dust motes.** A canvas of ~60 gold specks drifting upward in the hero,
-  brightening toward the centre where the light pool sits. Dust in a
-  sunbeam is the literal subject of the business.
-- **The sweep.** One wide specular pass across the hero every 13 seconds.
-- **Shimmer.** Gold hairlines and the footer wordmark catch a slow pass.
-
-Anything faster than these reads as decoration. Every one of them is
-disabled under `prefers-reduced-motion`.
+Almost none. A short fade-and-rise as sections enter, and nothing else.
+No parallax, no particles, no scroll-jacked hero, no shimmer. Content is
+visible by default and only hidden once JavaScript confirms it can
+reveal it again, so nothing depends on JS to be readable.
 
 ## Photography
 
-Two distinct roles, and they must not be mixed:
+**Every photograph on the site is AMP's own**, taken on a phone at real
+jobs. That is the whole point and the footer says so plainly.
 
-1. **Evidence — AMP's own photographs.** Real phone photography of real
-   client homes. Shown in controlled frames at controlled sizes, captioned
-   with what was actually done. Never stretched full-bleed and never
-   graded to pretend it is editorial interiors work. Its value is that it
-   is true.
-2. **Ground — the generated hero plate.** Abstract, near-black, a shaft of
-   light and suspended dust. It carries no factual claim, so generating it
-   costs the brand nothing in honesty. See `hero-film.md`.
+Two roles:
 
-**Never** use stock photography of models in aprons holding spray bottles.
+1. **Rooms** — finished work, shown at controlled sizes, captioned as
+   what they are. Never graded to imitate interiors photography.
+2. **Details** — grates, seams, fan blades. This is the argument. They
+   photographed these things for three years because they care about
+   them, and no competitor's stock library contains anything like it.
+
+Never use stock photography of models in aprons holding spray bottles.
+Never generate a photograph and present it as their work.
 
 ## The honesty rule
 
-Every factual claim on the site traces to AMP's own public presence, and
-every one is annotated with its source in `src/data/site.ts`. Ratings from
-Google and Facebook are cited **separately and never averaged into one
-invented number**. Services list only what AMP has publicly said it does.
-
-Absent by design, because nothing evidences them: licensing/bonding/
-insurance badges, satisfaction guarantees, background-check claims, eco
-certification, pricing, headcount, and awards. See `client-questions.md`.
+Every factual claim traces to AMP's public presence and is annotated with
+its source in `src/data/site.ts`. Google and Facebook ratings are cited
+separately and never averaged. Absent by design: licensing, bonding,
+insurance, guarantees, background checks, eco certification, pricing,
+headcount, awards. See `client-questions.md`.

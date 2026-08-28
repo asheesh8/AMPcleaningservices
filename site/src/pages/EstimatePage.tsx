@@ -68,11 +68,11 @@ export function EstimatePage() {
       <div className="form-page__intro">
         <p className="eyebrow">Request an estimate</p>
         <h1 className="display display--lg">
-          Three questions,<br />then a real answer.
+Three questions.
         </h1>
         <p className="lede">
-          Square footage, rooms and how often. Nothing here is a
-          commitment, and no card is involved.
+          Square footage, rooms, how often. That is what we need to
+          price it. No commitment, no card.
         </p>
         <p className="fine">
           Prefer to speak to someone? Call {primaryPhone.name} on{' '}
@@ -217,11 +217,11 @@ export function EstimatePage() {
               </button>
             )}
             {step < STEPS.length - 1 ? (
-              <button type="button" className="btn btn--gold" onClick={advance}>
+              <button type="button" className="btn btn--solid" onClick={advance}>
                 Continue
               </button>
             ) : (
-              <button type="submit" className="btn btn--gold" disabled={sending}>
+              <button type="submit" className="btn btn--solid" disabled={sending}>
                 {sending ? 'Sending…' : 'Send request'}
               </button>
             )}

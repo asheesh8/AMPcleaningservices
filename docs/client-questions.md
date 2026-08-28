@@ -53,5 +53,5 @@ with proof.
 | 11 | **Hiring terms** | The four bullets on /apply (steady scheduled work, working alongside you two, own transport, no experience required) are our draft. Confirm or correct each before the page is public. |
 | 12 | **Response time** | We removed "usually the same day" because nothing evidenced it. Tell us your real turnaround and we'll put it back. |
 | 13 | **"AMP is growing"** | The site now says the people who quote the home are the people who clean it — and separately that you're hiring. Once you take on a cleaner, tell us how you want that described so the two never contradict. |
-| 14 | **Hero backdrop** | The hero film is a generated abstract plate, not your work, and the footer says so. If you'd rather it be one of your own homes, we'll swap it. |
+| 14 | **Hero photograph** | The hero is one of your own living-room photos. Tell us if you'd rather lead with a different one. |
 | 15 | **Domain** | `ampcleaningservicesri.com` is used as a placeholder in the metadata and sitemap. Confirm the real one before launch. |

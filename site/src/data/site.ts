@@ -42,47 +42,49 @@ export const services = [
   {
     slug: 'deep-clean',
     name: 'Deep Cleaning',
-    summary: 'The first visit, and the one that resets the house.',
+    summary: 'The big first clean that resets the whole house.',
     detail:
-      'Every surface, including the ones above and below eye level. It takes the longest and it changes the most. It is the work most of their reviews describe.',
+      'Most homes start here. It takes the longest, it costs the most, and it is the one people write reviews about. After this, keeping up is easy.',
     // audit trail, not shown on the site: Nate Byrnes, Alice Pacheco, Janella Watson, nabin giri
   },
   {
     slug: 'standard',
     name: 'Standard & Recurring',
-    summary: 'Weekly, biweekly or monthly, on a standing schedule.',
+    summary: 'Weekly, every other week, or once a month.',
     detail:
-      'After the deep clean most homes settle into a rhythm. You keep the same people, so nothing has to be explained twice.',
+      'Pick a rhythm and we hold the slot. You will not have to explain your house twice.',
     // audit trail: frequencies listed by Alice Pacheco
   },
   {
     slug: 'real-estate',
     name: 'Listings & Closings',
-    summary: 'Pre-listing cleans, final walk-throughs, and handovers that cannot slip.',
+    summary: 'Before the photos. Before the walk-through. Before the keys change hands.',
     detail:
-      'An agent called us when a walk-through had gone wrong and the closing was that day. Another booked us before her listing photographs.',
+      'Agents book us when a house has to look right on a deadline. One called us the morning of a closing after a walk-through went badly. We got it done.',
     // audit trail: Christina Martinez (agent, final walk-through), Jill Pelletier (pre-listing)
   },
   {
     slug: 'move',
     name: 'Move-In & Move-Out',
-    summary: 'Empty rooms, short notice, and a deadline that does not move.',
+    summary: 'Empty rooms, tight deadlines, security deposits.',
     detail:
-      'End-of-lease and settling-in cleans, including at short notice.',
+      'Moving is already enough. We take the cleaning off the list, and we can usually work at short notice.',
     // audit trail: Joe Ponte, nabin giri
   },
   {
     slug: 'post-construction',
     name: 'Post-Construction',
-    summary: 'After the trades leave and before anyone moves in.',
-    detail: 'Dust that has settled into everything, and the fine work of getting it back out.',
+    summary: 'After the trades finish and before anyone moves in.',
+    detail:
+      'Construction dust gets into everything and keeps reappearing for weeks. Getting it out properly takes a particular kind of patience.',
     // audit trail: listed in AMP's own Facebook bio
   },
   {
     slug: 'commercial',
     name: 'Offices & Commercial',
-    summary: 'Workspaces held to the same standard as a home.',
-    detail: 'Scheduled around your hours rather than through the middle of them.',
+    summary: 'Offices and small commercial spaces.',
+    detail:
+      'Same standard we hold in a home. We work around your hours so nobody is vacuuming past your desk at eleven in the morning.',
     // audit trail: listed in AMP's own Facebook bio
   },
 ] as const
@@ -136,7 +138,7 @@ export const details = [
     src: '/media/detail/range.webp',
     alt: 'Gas range with the burner grates cleaned and refitted after a deep clean.',
     label: 'Burner grates',
-    note: 'Lifted, cleaned underneath, refitted square.',
+    note: 'Lifted off, cleaned underneath, put back straight.',
   },
   {
     src: '/media/detail/faucet.webp',
@@ -154,13 +156,13 @@ export const details = [
     src: '/media/detail/cooktop.webp',
     alt: 'Cooktop and oven front cleaned after service.',
     label: 'Oven front',
-    note: 'Handle, glass, and the seam under the door.',
+    note: 'The handle, the glass, the seam under the door.',
   },
   {
     src: '/media/detail/basin.webp',
     alt: 'Bathroom basin and surround cleaned, including the counter seam.',
     label: 'Basin surround',
-    note: 'The seam between counter and wall.',
+    note: 'Where the counter meets the wall.',
   },
 ] as const
 
@@ -180,13 +182,24 @@ export const work = [
  * other sourced claim rather than hardcoded in a component.
  */
 export const manifesto = {
-  quote: 'You can’t ask for premium results while shopping in the discount aisle.',
-  attribution: 'AMP Cleaning Services, on their own page',
+  quote: 'Expecting perfection while paying bargain rates is wild behavior.',
+  tail: 'You can’t ask for premium results while shopping in the discount aisle.',
+  attribution: 'AMP, on their own Facebook page',
+} as const
+
+/**
+ * Verbatim from a summer post asking clients to put the AC on. It is the
+ * single most human thing on their page and it says more about how they
+ * work than any amount of marketing copy could.
+ */
+export const houseRule = {
+  quote:
+    'Cleaning is hard physical work, and when there’s no airflow and the temperature keeps rising, it can become exhausting very quickly. A little cool air makes a huge difference for your cleaning girls and helps us do our best work for you.',
+  attribution: 'AMP, asking clients to turn the AC on, summer 2026',
 } as const
 
 export const navLinks = [
-  { href: '/#standard', label: 'The standard' },
-  { href: '/#detail', label: 'Detail' },
   { href: '/#services', label: 'Services' },
+  { href: '/#detail', label: 'Attention to detail' },
   { href: '/#reviews', label: 'Reviews' },
 ] as const

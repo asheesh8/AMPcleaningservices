@@ -33,7 +33,7 @@ export function SiteHeader() {
 
       <div className="site-header__actions">
         <a className="site-header__phone" href={primaryPhone.phoneHref}>{primaryPhone.phone}</a>
-        <Link className="btn btn--gold btn--sm" href="/estimate">Estimate</Link>
+        <Link className="btn btn--solid btn--sm" href="/estimate">Get a price</Link>
       </div>
 
       <button
@@ -52,7 +52,7 @@ export function SiteHeader() {
             {navLinks.map((l) => (
               <a key={l.href} href={l.href} onClick={close}>{l.label}</a>
             ))}
-            <Link href="/estimate" onClick={close}>Request an estimate</Link>
+            <Link href="/estimate" onClick={close}>Get a price</Link>
             <Link href="/apply" onClick={close}>Work with us</Link>
           </nav>
           <a className="mobile-menu__phone" href={primaryPhone.phoneHref} onClick={close}>{primaryPhone.phone}</a>

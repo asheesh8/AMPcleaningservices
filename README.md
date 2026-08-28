@@ -27,13 +27,11 @@ site/                     the Vite + React + TypeScript app
   src/pages/              home, estimate funnel, hiring funnel, thanks, 404
   src/styles/global.css   the whole visual system
   scripts/build-media.mjs regenerates web images from raw-assets
-  scripts/build-hero.mjs  regenerates the hero poster from the plate
   public/media/           optimised imagery (webp)
   public/fonts/           self-hosted Latin-only variable fonts
 raw-assets/fb/            full-resolution photos pulled from AMP's Facebook
 raw-assets/generated/     generated hero plates
-docs/brand-system.md      the identity and how to use it
-docs/hero-film.md         hero plate + the exact prompts to regenerate it
+docs/brand-system.md      the identity, the voice, and why v2 replaced v1
 docs/client-questions.md  what Belinda must confirm before launch
 ```
 

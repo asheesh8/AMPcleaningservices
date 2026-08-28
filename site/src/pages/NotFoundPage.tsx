@@ -10,7 +10,7 @@ export function NotFoundPage() {
       <h1 className="display display--lg">That page isn’t here.</h1>
       <p className="lede">Which is the one thing we didn’t clean up.</p>
       <div className="page-lead__actions">
-        <Link className="btn btn--gold" href="/">Back to the site</Link>
+        <Link className="btn btn--solid" href="/">Back to the site</Link>
       </div>
     </section>
     </>

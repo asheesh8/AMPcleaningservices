@@ -37,11 +37,12 @@ export function ApplyPage() {
       <div className="form-page__intro">
         <p className="eyebrow">Work with us</p>
         <h1 className="display display--lg">
-          We’re looking for people<br />who notice things.
+We’re looking for people who notice things.
         </h1>
         <p className="lede">
-          AMP has built {business.yearsInBusiness} years on one idea: the job is the
-          part nobody checks. If that is already how you work, we would like to meet you.
+          {business.yearsInBusiness} years of work, built on doing the parts
+          most people skip. If that is already how you clean, we would like
+          to meet you.
         </p>
 
         <ul className="apply-notes">
@@ -123,7 +124,7 @@ export function ApplyPage() {
           {failed && <SubmitError />}
 
           <div className="form-nav">
-            <button type="submit" className="btn btn--gold" disabled={sending}>
+            <button type="submit" className="btn btn--solid" disabled={sending}>
               {sending ? 'Sending…' : 'Send application'}
             </button>
           </div>

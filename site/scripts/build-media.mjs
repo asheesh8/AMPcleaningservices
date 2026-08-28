@@ -53,10 +53,3 @@ for (const w of [640, 1200]) {
     .toFile(`${OUT}/companion${suffix}.webp`)
 }
 console.log('companion  640, 1200')
-
-await sharp(`${RAW}/logo.jpg`)
-  .resize(640, 640, { fit: 'cover' })
-  .withMetadata({ density: 96 })
-  .webp({ quality: 90 })
-  .toFile('public/brand/amp-logo.webp')
-console.log('brand/amp-logo.webp')
