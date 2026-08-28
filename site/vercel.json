@@ -1,12 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
+  "framework": "vite",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+
   "rewrites": [
-    {
-      "source": "/((?!api/|assets/|fonts/|media/|favicon.svg|og-card.jpg|robots.txt).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
+
   "headers": [
     {
       "source": "/(.*)",
