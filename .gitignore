@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.env
+.env.*
+.vercel
+
+# Regenerable intermediates. The shipped 862KB hero film lives in
+# site/public/media/hero/, and both prompts are in docs/hero-film.md.
+raw-assets/generated/hero-film.mp4
+raw-assets/generated/hero-a.png
+raw-assets/fb/sheet/
+raw-assets/fb/urls*.txt
