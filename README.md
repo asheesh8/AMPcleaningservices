@@ -3,6 +3,8 @@
 Premium brand and marketing site for AMP Cleaning Services, LLC — Belinda
 and Amber, Warwick, Rhode Island.
 
+**Live:** https://amp-cleaning-services.vercel.app · **Stack:** Vite + React 19 + TypeScript in `site/`, plus one Vercel function (`site/api/submit.js`) that emails form submissions through Resend.
+
 ## Running it
 
 ```bash
